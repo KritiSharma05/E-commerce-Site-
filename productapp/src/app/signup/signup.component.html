@@ -1,0 +1,86 @@
+<div>
+<h1>Signup Form</h1>
+<br>
+<form [formGroup]="signupForm" (ngSubmit)="sendSignupData()">
+    
+    User Name <input type="text" id="userName"  formControlName="userName" />
+    <div *ngIf="signupForm.controls['userName'].hasError('required')">
+      username is Required </div>
+  <div *ngIf="signupForm.controls['userName'].hasError('minlength')">
+      username min length Required i.e 3
+  </div>
+  <div *ngIf="signupForm.controls['userName'].hasError('maxlength')">
+      username max length Required i.e 20
+  </div>
+    <br>
+    Email Id <input type="text"  required formControlName="emailId"/>
+    <div *ngIf="signupForm.controls['emailId'].hasError('required')">
+      Email is Required</div>
+    <br>
+    Password <input type="password"  required formControlName="password" required minlength="3"/>
+    <div *ngIf="signupForm.controls['password'].hasError('minlength')">
+      password min length Required i.e 3
+    </div>
+    <div *ngIf="signupForm.controls['password'].hasError('maxlength')">
+      password max length Required i.e 20
+    </div>
+    <br>
+    Mobile No.<input type="number" required formControlName="mobileNo"/>
+    <div *ngIf="signupForm.controls['mobileNo'].hasError('required')">
+      phoneNumber is Required</div>
+    <br>
+    Address <input type="text" required formControlName="address"/>
+    <div *ngIf="signupForm.controls['address'].hasError('required')">
+      Address is Required</div>
+    <br>
+    <input type="submit" [disabled]="!signupForm.valid" value="SignUp" />
+</form>
+<!--form [formGroup]="signupForm" (submit)="sendSignupData()">
+    Enter Email
+    <br>
+    <input type="text" formControlName="email"><br>
+    <div *ngIf="signupForm.controls['email'].hasError('required')">
+      Email is Required</div>
+    <br>
+    <br>
+    Enter Username
+    <br>
+    <input type="username" formControlName="username"><br>
+    <div *ngIf="signupForm.controls['username'].hasError('required')">
+        username is Required </div>
+    <div *ngIf="signupForm.controls['username'].hasError('minlength')">
+        username min length Required i.e 3
+    </div>
+    <div *ngIf="signupForm.controls['username'].hasError('maxlength')">
+        username max length Required i.e 20
+    </div>
+    <br>
+
+    Enter Password
+    <br>
+    <input type="password" formControlName="password"><br>
+    <div *ngIf="signupForm.controls['password'].hasError('required')">
+      password is Required </div>
+    <div *ngIf="signupForm.controls['password'].hasError('minlength')">
+      password min length Required i.e 3
+    </div>
+    <div *ngIf="signupForm.controls['password'].hasError('maxlength')">
+      password max length Required i.e 20
+    </div>
+    Enter MobileNumber
+    <br>
+    <input type="text" formControlName="mobileno"><br>
+    <div *ngIf="signupForm.controls['mobileno'].hasError('required')">
+        phoneNumber is Required</div>
+    <br>
+    <br>
+    Enter Address
+    <br>
+    <input type="text" formControlName="address"><br>
+    <div *ngIf="signupForm.controls['address'].hasError('required')">
+      Address is Required</div>
+    <br>
+    <br>
+    <input type="submit" [disabled]="!signupForm.valid">
+</form-->
+</div>

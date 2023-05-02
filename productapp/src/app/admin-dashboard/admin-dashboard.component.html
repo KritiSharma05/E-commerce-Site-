@@ -1,0 +1,60 @@
+<div>
+      
+    <h2>Shopping Store</h2>
+    <button (click)="logout()"  >
+      Logout
+    </button> 
+  </div>
+<div>
+<h1>Admin dashboard</h1>
+<h2>New product</h2> 
+<form [formGroup]="productForm" (ngSubmit)="sendProductData()">
+    Product ID <input type="text" formControlName="productId"/>
+    <br><br>
+    Name <input type="text" formControlName="name"/>
+    <br><br>
+    Desc <input type="text" formControlName="desc"/>
+    <br><br>
+    Price <input type="number" formControlName="price"/>
+    <br><br>
+    <input type="submit" value="Add Product"/>
+
+</form>
+<br>
+
+<table border="1">
+    <thead>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Options</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of allProducts">
+            <td>{{p.productId}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.desc}}</td>
+            <td>{{p.price}}</td>
+            <td>
+                <button id="btn" (click)="getEditableProduct(p)">Edit</button>
+                <button (click)="deleteProduct(p.productId)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br><br><br>
+<h3>Product Updation form</h3>
+<form [formGroup]="editProductForm" (ngSubmit)="updateProudct()">
+
+ Product ID <input type="text" formControlName="productId" readonly/>
+    <br><br>
+    Name <input type="text" formControlName="name"/>
+    <br><br>
+    Desc <input type="text" formControlName="desc"/>
+    <br><br>
+    Price <input type="number" formControlName="price"/>
+    <br><br>
+    <input type="submit" value="Update Product"/>
+</form>
+</div>

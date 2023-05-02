@@ -1,0 +1,68 @@
+<div>
+      
+  <h2>Shopping Store</h2>
+  <button (click)="logout()"  >
+    Logout
+  </button> 
+</div>
+<div>
+<!--h1>user-dashboar</h1>
+
+    {{userDetails|json}}
+    <hr/>
+    User Cart
+    <br>
+<hr>
+    <br>
+    <br-->
+    <h2>Available products</h2>
+    <table border="1">
+        <thead>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Options</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of allProducts">
+                <td>{{p.productId}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.desc}}</td>
+                <td>{{p.price}}</td>
+                <td>
+                    <button (click)="addProductToCart(p)">Add to Cart</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>{{userDetails.userName}}'s cart</h3>
+    <!--div>
+    {{userDetails|json}}
+</div-->
+<div class="content-container" >
+    <mat-card class="example-card  " *ngFor="let c of userDetails.products" style="border-radius:10px;">
+     
+         <mat-card-header>
+          <mat-card-title>Item :{{c.name}}</mat-card-title>
+          <mat-card-subtitle>Price:{{c.price}}</mat-card-subtitle>
+        </mat-card-header>
+        
+      </mat-card>
+      <br><br>
+    </div>
+    <!--div  *ngFor="let c of userDetails.products">
+        <div id="cart">
+        <h5>ProductId : {{c.productId}}</h5>
+       <h5>ProductName: {{c.name}}</h5>
+       <h5>ProductDesc : {{c.desc}}</h5>
+       <h5>ProductPrice: {{c.price}}</h5>
+      
+       <br>
+    </div-->
+  <br>
+    <hr/>
+    
+    <br>
+<hr>
+</div>

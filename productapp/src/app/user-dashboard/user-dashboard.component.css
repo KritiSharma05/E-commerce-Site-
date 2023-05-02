@@ -1,0 +1,31 @@
+div{
+    text-align: center;
+    background-color: pink;
+}
+table{
+    position: relative;
+    left: 400px;
+}
+#cart
+{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    left: 400px;
+}
+.content-container{
+    /*padding-top: 3rem;*/
+   
+    width: 100px;
+    margin: 100px;
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    column-gap: 40px;
+    row-gap: 40px;
+    /*border:solid;
+    border-width: 5px;
+    display: flex;
+    flex-direction: row;*/
+    }

@@ -1,0 +1,12 @@
+<div>
+<h1>Login Form</h1>
+<br>
+<form  [formGroup]="loginForm" (ngSubmit)="sendLoginData()">
+    Email Id <input type="text"  formControlName="emailId"/>
+    <br>
+    Password <input type="password"  formControlName="password"/>
+    <br>
+    <input type="submit" value="Login"/>
+
+</form>
+</div>
